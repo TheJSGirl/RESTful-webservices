@@ -1,10 +1,5 @@
 const bookController =  (Book) => {
-    const post = (req, res) => {
-        const book = new book(req,body);
-
-        book.save();
-        res.status(201).send(book);
-    }
+    
     
     const get = (req, res) => {
             const query = {};
@@ -23,11 +18,17 @@ const bookController =  (Book) => {
             });
 
         }
+    const post = (req, res) => {
+        const book = new book(req,body);
 
-        return {
-            post : post,
-            get  : get
-        }
+        book.save();
+        res.status(201).send(book);
+    }
+
+    return {
+        get  : get,
+        post : post
+    }
 
 }
 
